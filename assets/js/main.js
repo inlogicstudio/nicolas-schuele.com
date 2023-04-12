@@ -4,3 +4,10 @@ var myOffside = offside( '#nav', {
     buttonsSelector: '#toggle, .another-button',
     slidingSide: 'right',
 });
+
+var navLinks = document.querySelectorAll(".nav_list_item");
+navLinks.forEach(function(element) {
+    element.addEventListener("click", function() {
+        myOffside.close();
+    })
+});
