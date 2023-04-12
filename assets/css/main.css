@@ -408,15 +408,16 @@ textarea {
 
    @media all and (max-width: 496px) {
     .signature {
-      bottom: 0rem;
+      bottom: 16rem;
       height: 5rem;
       right: calc(50% - 8.5rem);
       width: 17rem;
     }
     .header {
-      background: #1d1915;
-      padding-top: 12rem;
-    }
+      background-size: auto 40%;
+      background-position-x: center;
+      padding-top: 30rem;
+    }  
     .tagline {
       font-size: .8rem; 
     }
@@ -431,7 +432,7 @@ textarea {
 
    @media all and (min-width: 497px) and (max-width: 640px) {
     .signature {
-      bottom: .5rem;
+      bottom: 17rem;
       height: 7rem;
       right: calc(50% - 11rem);
       width: 22rem;
@@ -440,9 +441,10 @@ textarea {
       font-size: .9rem; 
     }
     .header {
-      background: #1d1915;
-      padding-top: 3rem;
-    }
+      background-size: auto 50%;
+      background-position-x: center;
+      padding-top: 20rem;
+    }  
     .sectionWrapper {
       margin-top: 0;
     }
@@ -459,8 +461,13 @@ textarea {
 
    @media all and (min-width: 641px) and (max-width: 799px) {
     .header {
-      background: #1d1915;
-      padding-top: 3rem;
+      background-size: auto 50%;
+      background-position-x: center;
+      padding-top: 20rem;
+    }  
+    .signature {
+      bottom: 17rem;
+      right: calc(50% - 13.75rem);
     }
     .sectionWrapper {
       margin-top: 0;
