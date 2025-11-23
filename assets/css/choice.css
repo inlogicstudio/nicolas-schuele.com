@@ -83,7 +83,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
+  white-space: nowrap; /* keeps text on one line */
   border: 1px solid #c5a872;
   text-decoration: none;
   color: #f4f2ec;
