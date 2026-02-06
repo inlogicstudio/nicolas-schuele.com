@@ -238,7 +238,13 @@ blockquote {
 
 .nav a {
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
+  letter-spacing: .02em;
+}
+
+.nav a:hover,
+.nav a:focus {
+  opacity: .85;
 }
 
 .nav_list {
@@ -250,6 +256,11 @@ blockquote {
 .nav_list_item {
   margin-bottom: .75rem;
 }
+.nav_list_item a {
+  display: block;
+  padding: .4rem 0;
+}
+
 
 .nav_list_item:first-child {
   margin-bottom: 2rem;
