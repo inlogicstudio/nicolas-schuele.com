@@ -256,6 +256,7 @@ blockquote {
 .nav_list_item {
   margin-bottom: .75rem;
 }
+
 .nav_list_item a {
   display: block;
   padding: .4rem 0;
@@ -283,56 +284,70 @@ blockquote {
 }
 
 .signature {
-    /* We keep the positioning logic here */
-    bottom: 1rem;
-    height: 8.2824rem;
-    position: absolute;
-    right: calc(10% + 5rem);
-    width: 27.5rem;
-    z-index: 1;
-    
-    /* REMOVED background lines from here */
+  /* We keep the positioning logic here */
+  bottom: 1rem;
+  height: 8.2824rem;
+  position: absolute;
+  right: calc(10% + 5rem);
+  width: 27.5rem;
+  z-index: 1;
+
 }
 
 .signature::before {
-    content: "";
-    /* Moved background image here */
-    background: url(../img/signature.svg) no-repeat;
-    background-size: contain;
-    
-    /* Force this layer to fill the parent container */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* THE MAGIC FIX: This dims the white signature to 30% brightness */
-    opacity: 0.4; 
-    
-    /* Ensures it sits behind the text */
-    z-index: -1; 
+  content: "";
+  /* Moved background image here */
+  background: url(../img/signature2.svg) no-repeat;
+  background-size: contain;
+
+  /* Force this layer to fill the parent container */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.7;
+
+  /* Ensures it sits behind the text */
+  z-index: -1;
 }
 
 .tagline {
-    /* Positioning: Centered horizontally over the signature */
-    position: absolute;
-    bottom: 0.3rem; /* Moved up slightly to sit "in" the signature */
-    transform: translateX(2rem); /* Adjusted to align better with signature */
-    left: 0;
-    width: 100%;
-    text-align: center; /* Centers the text */
-    margin: 0;
-    
-    /* Typography */
-    font-size: 1.25rem;
-    font-weight: 700; /* Increased from 300 for better readability */
-    text-transform: uppercase;
-    
-    color: #fff; 
-    /* color: #E0C097;  */
-    z-index: 10;    /* Forces it on top of the image */
-    text-shadow: 0px 2px 5px rgba(0,0,0,0.9); /* Black shadow to separate text from signature */
+  /* Positioning: Centered horizontally over the signature */
+  position: absolute;
+  bottom: 0rem;
+  /* Moved up slightly to sit "in" the signature */
+  transform: translateX(2rem);
+  /* Adjusted to align better with signature */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  /* Centers the text */
+  margin: 0;
+
+  /* Typography */
+  font-size: 1.25rem;
+  font-weight: 700;
+  /* Increased from 300 for better readability */
+  text-transform: uppercase;
+
+  color: #fff;
+  /* color: #E0C097;  */
+  z-index: 10;
+  /* Forces it on top of the image */
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
+  /* Black shadow to separate text from signature */
+}
+
+.sub-tagline {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #fff;
+  /* Keep the location white for contrast */
+  display: block;
+  margin-top: 5px;
+  text-transform: none;
 }
 
 .text_wrapper {
@@ -566,7 +581,27 @@ blockquote {
   }
 
   .tagline {
-    font-size: .8rem;
+    font-size: .85rem;
+    /* Readable mobile size */
+    bottom: -4.5rem;
+    /* Pushes text BELOW the signature SVG */
+    transform: none;
+    /* Removes the desktop "right shift" */
+
+    /* Center alignment fix for narrow screens */
+    width: 140%;
+    /* Make container wider than the signature */
+    left: -20%;
+    /* Re-center the wider container */
+
+    /* Optional: Since it's not overlapping white lines anymore, 
+       we can remove the heavy shadow for a cleaner look */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+
+  .sub-tagline {
+    font-size: 0.8em;
+    /* Adjust sub-text size */
   }
 
   .recentCredits .grid_container {
@@ -588,7 +623,16 @@ blockquote {
   }
 
   .tagline {
-    font-size: .9rem;
+    font-size: 1rem;
+    bottom: -2rem;
+    /* Push down */
+    transform: none;
+    /* Remove side shift */
+    width: 120%;
+    /* Widen container */
+    left: -10%;
+    /* Center container */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
   }
 
   .header {
@@ -625,6 +669,19 @@ blockquote {
     right: calc(50% - 13.75rem);
   }
 
+  .tagline {
+    font-size: 1rem;
+    bottom: -2rem;
+    /* Push down */
+    transform: none;
+    /* Remove side shift */
+    width: 120%;
+    /* Widen container */
+    left: -10%;
+    /* Center container */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+
   .sectionWrapper {
     margin-top: 0;
   }
@@ -636,6 +693,19 @@ blockquote {
     height: 7rem;
     right: calc(10% + 3rem);
     width: 25rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    bottom: -2rem;
+    /* Push down */
+    transform: none;
+    /* Remove side shift */
+    width: 120%;
+    /* Widen container */
+    left: -10%;
+    /* Center container */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
   }
 
   .header {
@@ -653,6 +723,19 @@ blockquote {
     height: 9rem;
     right: calc(10% + 2rem);
     width: 29rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    bottom: -1rem;
+    /* Push down */
+    transform: none;
+    /* Remove side shift */
+    width: 120%;
+    /* Widen container */
+    left: -10%;
+    /* Center container */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
   }
 
   .header {
