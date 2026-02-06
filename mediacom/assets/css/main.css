@@ -255,6 +255,15 @@ blockquote {
   margin-bottom: 2rem;
 }
 
+.nav_divider {
+  display: block;
+  height: 1px;
+  opacity: .35;
+  background: #fff;
+  margin: 1.25rem 3rem 1.25rem 0;
+}
+
+
 .icon {
   height: 1.25rem;
   margin-right: .5rem;
