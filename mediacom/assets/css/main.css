@@ -98,6 +98,7 @@ body {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
+  background-color: #141C20;
 }
 
 a {
@@ -139,6 +140,15 @@ blockquote {
   grid-column-gap: 7.5rem;
   grid-row-gap: 4rem;
 }
+
+.grid_container2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 7.5rem;
+  row-gap: 4rem;
+  align-items: start;
+}
+
 
 .recentCredits .grid_container {
   grid-template-columns: repeat(4, 1fr);
@@ -215,7 +225,7 @@ blockquote {
 }
 
 .nav {
-  background: #807366;
+  background: #4B5A6C;
   font-size: 1.25rem;
 }
 
@@ -464,6 +474,7 @@ blockquote {
    ========================================================================== */
 
 @media all and (min-width: 1px) and (max-width: 999px) {
+
   .recentCredits .grid_container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -471,6 +482,10 @@ blockquote {
   .testimonials .grid_container,
   .albums .grid_container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid_container2 {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -488,6 +503,8 @@ blockquote {
     right: calc(50% - 8.5rem);
     width: 17rem;
   }
+
+
 
   .header {
     background-size: auto 40%;
