@@ -366,7 +366,7 @@ blockquote {
 .player {
   border-radius: .5rem;
   height: 36rem;
-  width: 80%;
+  width: 100%;
 }
 
 .button {
