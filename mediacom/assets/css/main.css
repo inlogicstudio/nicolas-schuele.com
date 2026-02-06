@@ -383,15 +383,28 @@ blockquote {
 
 .background-1 {
   background: #4B5A6C;
+  position: relative;
 }
 
 .background-2 {
   /* background: linear-gradient(90deg, #050302 0%, #17100B 100%); */
   background: #323C48;
+  position: relative;
 }
 
 .background-3 {
   background: #63768d;
+  position: relative;
+}
+
+.background-1::before, .background-2::before, .background-3::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("../img/noise.png"); /* A tiny transparent noise png */
+    opacity: 0.1; 
+    pointer-events: none;
+    z-index: 0;
 }
 
 .intro {
@@ -522,6 +535,8 @@ blockquote {
   overflow: hidden;
   padding: calc(5% + 2rem) 3rem calc(1rem);
   text-align: center;
+  z-index: 1;
+  position: relative;
 }
 
 .sectionWrapper {
@@ -531,6 +546,13 @@ blockquote {
 .sectionWrapper>.section:not(:last-child)::after {
   transform-origin: right bottom;
   transform: skewY(-4deg);
+}
+
+.sectionWrapper > .section:not(:last-child)::before {
+    transform-origin: right bottom;
+    transform: skewY(-4deg); 
+    height: 120%;            
+    top: -10%;               
 }
 
 .standalone {
