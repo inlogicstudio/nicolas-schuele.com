@@ -225,7 +225,7 @@ blockquote {
 }
 
 .nav {
-  background: #4B5A6C;
+  background: #141C20;
   font-size: 1.25rem;
 }
 
@@ -298,7 +298,7 @@ blockquote {
 .player {
   border-radius: .5rem;
   height: 36rem;
-  width: 100%;
+  width: 80%;
 }
 
 .button {
