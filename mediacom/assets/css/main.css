@@ -316,7 +316,7 @@ blockquote {
 .tagline {
   /* Positioning: Centered horizontally over the signature */
   position: absolute;
-  bottom: 0rem;
+  bottom: -1rem;
   /* Moved up slightly to sit "in" the signature */
   transform: translateX(2rem);
   /* Adjusted to align better with signature */
