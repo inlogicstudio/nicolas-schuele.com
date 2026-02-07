@@ -1,5 +1,5 @@
 /*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
-/* main.css 2.4.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/* main.css 2.5.0 | MIT License | https://github.com/h5bp/main.css#readme */
 
 /* ==========================================================================
    1. BASE & RESET
@@ -10,8 +10,8 @@ html {
     font-size: 1em;
     line-height: 1.4;
     scroll-behavior: smooth;
-    box-sizing: border-box; /* CRITICAL FIX: Handles padding correctly */
-    overflow-x: hidden;     /* CRITICAL FIX: Prevents horizontal gap */
+    box-sizing: border-box; 
+    overflow-x: hidden;     
 }
 
 *, *:before, *:after {
@@ -25,7 +25,7 @@ body {
     font-weight: 300;
     line-height: 1.5;
     background-color: #141C20;
-    overflow-x: hidden;     /* CRITICAL FIX: Double safety for mobile */
+    overflow-x: hidden;     
 }
 
 ::-moz-selection, ::selection {
@@ -175,6 +175,7 @@ a { color: #fff; }
 .offside-js--is-open .toggle { right: 21rem; }
 
 /* --- Grid System --- */
+/* Default is 3 columns for Desktop */
 .grid_container {
     display: grid;
     grid-template-rows: 1fr;
@@ -397,7 +398,6 @@ a { color: #fff; }
         background-size: auto 20rem;
     }
 
-    /* Reduce padding to gain space and prevent overflow */
     .sectionInner {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -444,6 +444,7 @@ a { color: #fff; }
         display: block;
     }
 
+    /* Force 1 column on mobile */
     .recentCredits .grid_container,
     .testimonials .grid_container,
     .albums .grid_container,
@@ -522,8 +523,9 @@ a { color: #fff; }
     .sectionWrapper { margin-top: -10rem; }
 }
 
-/* --- Desktop (Up to 999px grid fix) --- */
-@media all and (min-width: 1px) and (max-width: 999px) {
+/* --- Tablet / Laptop (641px - 999px) --- */
+/* CRITICAL FIX: Starts at 641px so it DOES NOT OVERRIDE PHONES */
+@media all and (min-width: 641px) and (max-width: 999px) {
     .recentCredits .grid_container { grid-template-columns: repeat(2, 1fr); }
     .testimonials .grid_container, .albums .grid_container { grid-template-columns: repeat(2, 1fr); }
     .grid_container2 { grid-template-columns: 1fr; }
