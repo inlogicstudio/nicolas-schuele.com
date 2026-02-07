@@ -1,5 +1,5 @@
 /*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
-/* main.css 2.6.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/* main.css 2.7.0 | MIT License | https://github.com/h5bp/main.css#readme */
 
 /* ==========================================================================
    1. BASE & RESET
@@ -11,7 +11,6 @@ html {
     line-height: 1.4;
     scroll-behavior: smooth;
     box-sizing: border-box; 
-    /* REMOVED overflow-x here to fix double scrollbar */
 }
 
 *, *:before, *:after {
@@ -25,7 +24,7 @@ body {
     font-weight: 300;
     line-height: 1.5;
     background-color: #141C20;
-    overflow-x: hidden; /* Kept here to prevent horizontal gap */
+    overflow-x: hidden; 
 }
 
 ::-moz-selection, ::selection {
@@ -383,8 +382,9 @@ a { color: #fff; }
    6. RESPONSIVE / MEDIA QUERIES
    ========================================================================== */
 
-/* --- Mobile (<496px) --- */
-@media all and (max-width: 496px) {
+/* --- Mobile & Tablet (Up to 799px) --- */
+/* Combines phones and tablets into the "Vertical Stack" layout */
+@media all and (max-width: 799px) {
     .header {
         display: flex;
         flex-direction: column;
@@ -397,7 +397,6 @@ a { color: #fff; }
         background-size: auto 20rem;
     }
 
-    /* Reduce padding to gain space */
     .sectionInner {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -444,18 +443,34 @@ a { color: #fff; }
         display: block;
     }
 
-    /* Force 1 column on mobile */
+    .grid_container h3 {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+/* --- Phones Only (1 Column Grid) --- */
+@media all and (max-width: 640px) {
     .recentCredits .grid_container,
     .testimonials .grid_container,
     .albums .grid_container,
     .grid_container2 {
         grid-template-columns: repeat(1, 1fr);
     }
-    
-    .grid_container h3 {
-        align-items: flex-start;
-        text-align: left;
+}
+
+/* --- Tablet Tweaks (641px - 799px) --- */
+@media all and (min-width: 641px) and (max-width: 799px) {
+    /* Slightly larger photo for tablets */
+    .header {
+        padding-bottom: 20rem;
+        background-size: auto 26rem;
     }
+    
+    /* Keep 2 columns for tablets */
+    .recentCredits .grid_container { grid-template-columns: repeat(2, 1fr); }
+    .testimonials .grid_container, .albums .grid_container { grid-template-columns: repeat(2, 1fr); }
+    .grid_container2 { grid-template-columns: 1fr; }
 }
 
 /* --- Links Stack --- */
@@ -463,19 +478,9 @@ a { color: #fff; }
     .link_list_item { display: block; margin: 0 0 2rem 0; }
 }
 
-/* --- Large Phones / Small Tablets (497px - 640px) --- */
-@media all and (min-width: 497px) and (max-width: 640px) {
-    .header {
-        background-size: auto 50%;
-        background-position-x: center;
-        padding-top: 18rem;
-    }
-    .signature {
-        bottom: 17rem;
-        height: 7rem;
-        right: calc(50% - 11rem);
-        width: 22rem;
-    }
+/* --- Small Desktop (800px - 919px) --- */
+@media all and (min-width: 800px) and (max-width: 919px) {
+    .signature { bottom: .5rem; height: 7rem; right: calc(10% + 3rem); width: 25rem; }
     .tagline {
         font-size: 1rem;
         bottom: -2rem;
@@ -484,19 +489,15 @@ a { color: #fff; }
         left: -10%;
         text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
     }
-    .sectionWrapper { margin-top: 0; }
-    .toggle { height: 2rem; right: 2.5rem; top: 2.5rem; width: 2rem; }
-    .testimonials .grid_container { grid-template-columns: repeat(1, 1fr); }
+    .header { padding-top: 10rem; }
+    .sectionWrapper { margin-top: -10rem; }
 }
 
-/* --- Tablet / Laptop (641px - 999px) --- */
-/* FIXED: Changed from 1px to 641px to prevent overriding mobile styles */
+/* --- Grid System for Tablets/Desktops (641px - 999px) --- */
 @media all and (min-width: 641px) and (max-width: 999px) {
     .recentCredits .grid_container { grid-template-columns: repeat(2, 1fr); }
     .testimonials .grid_container, .albums .grid_container { grid-template-columns: repeat(2, 1fr); }
     .grid_container2 { grid-template-columns: 1fr; }
-
-    
 }
 
 /* --- Large Desktop Variations --- */
