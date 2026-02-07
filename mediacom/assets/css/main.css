@@ -1,5 +1,5 @@
 /*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
-/* main.css 2.3.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/* main.css 2.3.1 | MIT License | https://github.com/h5bp/main.css#readme */
 
 /* ==========================================================================
    1. BASE & RESET
@@ -21,8 +21,7 @@ body {
     background-color: #141C20;
 }
 
-::-moz-selection,
-::selection {
+::-moz-selection, ::selection {
     background: #b3d4fc;
     text-shadow: none;
 }
@@ -59,8 +58,7 @@ blockquote { margin: 0; text-align: left; }
 
 a { color: #fff; }
 
-.link_list a,
-.albums a {
+.link_list a, .albums a {
     display: inline-block;
     text-decoration: none;
 }
@@ -189,7 +187,6 @@ a { color: #fff; }
 .recentCredits .grid_container { grid-template-columns: repeat(4, 1fr); }
 .testimonials .grid_container, .albums .grid_container { grid-template-columns: repeat(3, 1fr); }
 
-/* Services Titles */
 .grid_container h3 {
     display: flex;
     align-items: center;
@@ -386,42 +383,30 @@ a { color: #fff; }
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-
-        /* Layout & Spacing */
-        min-height: auto;      /* Remove forced height */
-        padding-top: 8rem;     /* Space at the top */
-        padding-bottom: 16rem; /* Reserve empty space at the bottom for the photo */
-
-        /* Photo Positioning */
+        min-height: auto;
+        padding-top: 8rem;
+        padding-bottom: 16rem;
         background-position: center bottom;
-        background-size: auto 20rem; /* Sets the photo size */
+        background-size: auto 20rem;
     }
 
-    /* FIX 1: The Container */
     .signature {
         position: relative;
         display: block;
         width: 100%;       
-        max-width: 22rem;  /* Slight increase to prevent text wrapping too tight */
+        max-width: 22rem;
         height: auto;
         z-index: 20;
-
-        /* CRITICAL ALIGNMENT FIXES */
         margin-left: auto;
         margin-right: auto;
-        
-        /* This resets the desktop offset that was pushing it to the left */
         right: auto; 
         left: auto;
-        
-        /* Internal Spacing */
-        padding-top: 8rem; /* Reserves space for the SVG image above text */
+        padding-top: 8rem;
         margin-bottom: 1rem;
     }
 
-    /* FIX 2: The Signature Image (SVG) */
     .signature::before {
-        height: 7rem; /* Height of the signature graphic */
+        height: 7rem;
         width: 100%;
         background-size: contain;
         background-position: center bottom !important; 
@@ -429,18 +414,14 @@ a { color: #fff; }
         left: 0;
     }
 
-    /* FIX 3: The Text */
     .tagline {
         position: relative;
         width: 100%;
-        text-align: center; /* Ensures the text itself is centered */
+        text-align: center;
         transform: none;
-        
-        /* Reset all desktop coordinates */
         left: auto;
         right: auto;
         bottom: auto;
-        
         margin-top: 0.5rem;
         text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
     }
@@ -450,13 +431,13 @@ a { color: #fff; }
         display: block;
     }
 
-    /* GRID RESETS (Keep these as they were) */
     .recentCredits .grid_container,
     .testimonials .grid_container,
     .albums .grid_container,
     .grid_container2 {
         grid-template-columns: repeat(1, 1fr);
     }
+    
     .grid_container h3 {
         align-items: flex-start;
         text-align: left;
