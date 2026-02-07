@@ -1,94 +1,14 @@
 /*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
-
 /* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
 
 /* ==========================================================================
-   Base styles: opinionated defaults
+   1. BASE & RESET
    ========================================================================== */
 
 html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-html {
   scroll-behavior: smooth;
 }
 
@@ -101,15 +21,30 @@ body {
   background-color: #141C20;
 }
 
-a {
-  color: #fff;
+::-moz-selection, ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
-.link_list a,
-.albums a {
-  display: inline-block;
-  text-decoration: none;
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
+
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle;
+}
+
+fieldset { border: 0; margin: 0; padding: 0; }
+textarea { resize: vertical; }
+
+/* ==========================================================================
+   2. TYPOGRAPHY & LINKS
+   ========================================================================== */
 
 h2 {
   font-size: 1.5rem;
@@ -117,75 +52,30 @@ h2 {
   margin-bottom: 4rem;
 }
 
-p {
-  margin-bottom: 2rem;
+p { margin-bottom: 2rem; }
+strong { font-weight: 700; }
+blockquote { margin: 0; text-align: left; }
+
+a { color: #fff; }
+.link_list a, .albums a {
+  display: inline-block;
+  text-decoration: none;
 }
 
-strong {
-  font-weight: 700;
-}
+/* ==========================================================================
+   3. COMPONENTS
+   ========================================================================== */
 
-blockquote {
-  margin: 0;
-  text-align: left;
-}
-
-.testimonials footer {
-  line-height: 1.8;
-}
-
-.grid_container {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-column-gap: 7.5rem;
-  grid-row-gap: 4rem;
-}
-
-.grid_container2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 7.5rem;
-  row-gap: 4rem;
-  align-items: start;
-}
-
-
-.recentCredits .grid_container {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.testimonials .grid_container,
-.albums .grid_container {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.recentCredits img,
-.albums img {
-  border: 1px solid rgba(255, 255, 255, .25);
-  max-width: 100%;
-}
-
-.recentCredits figure,
-.albums figure {
-  margin: 0;
-}
-
-.albums a:hover,
-.albums a:focus {
-  transform: scale(1.1);
-}
-
-.albums a {
-  transition: transform .3s cubic-bezier(0.87, 0, 0.13, 1);
-}
-
-.recentCredits figcaption,
-.albums figcaption {
-  display: block;
-  font-size: .8125rem;
-  font-weight: 500;
-  margin: 2rem 0 1rem;
-  text-transform: uppercase;
+/* --- Buttons & Badges --- */
+.button {
+  background: rgba(255, 255, 255, .62);
+  border-radius: .5rem;
+  color: rgba(0, 0, 0, 1);
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1.25rem 2rem;
+  text-decoration: none;
 }
 
 .production {
@@ -199,31 +89,21 @@ blockquote {
   text-transform: uppercase;
 }
 
-.grid_container p {
-  text-align: left;
+/* --- Icons --- */
+.icon {
+  height: 1.25rem;
+  margin-right: .5rem;
+  position: relative;
+  top: -.075rem;
 }
 
-.toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  height: 2.5rem;
-  position: fixed;
-  right: 3rem;
-  top: 3rem;
-  transition: right .3s cubic-bezier(0.87, 0, 0.13, 1);
-  width: 2.5rem;
-  z-index: 900;
+.service-icon {
+  width: 2rem;            
+  height: auto;           
+  display: block;
 }
 
-.offside-js--is-open .toggle {
-  right: 21rem;
-}
-
-.toggle .icon {
-  height: 2rem;
-}
-
+/* --- Navigation & Menu --- */
 .nav {
   background: #141C20;
   font-size: 1.25rem;
@@ -241,11 +121,7 @@ blockquote {
   text-transform: none;
   letter-spacing: .02em;
 }
-
-.nav a:hover,
-.nav a:focus {
-  opacity: .85;
-}
+.nav a:hover, .nav a:focus { opacity: .85; }
 
 .nav_list {
   list-style: none;
@@ -253,19 +129,9 @@ blockquote {
   padding: 3rem 0 0 3rem;
 }
 
-.nav_list_item {
-  margin-bottom: .75rem;
-}
-
-.nav_list_item a {
-  display: block;
-  padding: .4rem 0;
-}
-
-
-.nav_list_item:first-child {
-  margin-bottom: 2rem;
-}
+.nav_list_item { margin-bottom: .75rem; }
+.nav_list_item:first-child { margin-bottom: 2rem; }
+.nav_list_item a { display: block; padding: .4rem 0; }
 
 .nav_divider {
   display: block;
@@ -275,240 +141,97 @@ blockquote {
   margin: 1.25rem 3rem 1.25rem 0;
 }
 
+.toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 2.5rem;
+  position: fixed;
+  right: 3rem;
+  top: 3rem;
+  transition: right .3s cubic-bezier(0.87, 0, 0.13, 1);
+  width: 2.5rem;
+  z-index: 900;
+}
+.toggle .icon { height: 2rem; }
+.offside-js--is-open .toggle { right: 21rem; }
 
-.icon {
-  height: 1.25rem;
-  margin-right: .5rem;
-  position: relative;
-  top: -.075rem;
+/* --- Grid System --- */
+.grid_container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-column-gap: 7.5rem;
+  grid-row-gap: 4rem;
+}
+.grid_container p { text-align: left; }
+
+.grid_container2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 7.5rem;
+  row-gap: 4rem;
+  align-items: start;
 }
 
-.signature {
-  /* We keep the positioning logic here */
-  bottom: 1rem;
-  height: 8.2824rem;
-  position: absolute;
-  right: calc(10% + 5rem);
-  width: 27.5rem;
-  z-index: 1;
+.recentCredits .grid_container { grid-template-columns: repeat(4, 1fr); }
+.testimonials .grid_container, 
+.albums .grid_container { grid-template-columns: repeat(3, 1fr); }
 
+/* --- Services Titles (Flexbox) --- */
+.grid_container h3 {
+  display: flex;
+  align-items: center;    
+  justify-content: center; 
+  gap: 0.75rem;
 }
 
-.signature::before {
-  content: "";
-  /* Moved background image here */
-  background: url(../img/signature2.svg) no-repeat;
-  background-size: contain;
-
-  /* Force this layer to fill the parent container */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  opacity: 0.7;
-
-  /* Ensures it sits behind the text */
-  z-index: -1;
-}
-
-.tagline {
-  /* Positioning: Centered horizontally over the signature */
-  position: absolute;
-  bottom: -1rem;
-  /* Moved up slightly to sit "in" the signature */
-  transform: translateX(2rem);
-  /* Adjusted to align better with signature */
-  left: 0;
-  width: 100%;
-  text-align: center;
-  /* Centers the text */
-  margin: 0;
-
-  /* Typography */
-  font-size: 1.25rem;
-  font-weight: 700;
-  /* Increased from 300 for better readability */
-  text-transform: uppercase;
-
-  color: #fff;
-  /* color: #E0C097;  */
-  z-index: 10;
-  /* Forces it on top of the image */
-  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
-  /* Black shadow to separate text from signature */
-}
-
-.sub-tagline {
-  font-size: 0.9em;
-  font-weight: 400;
-  color: #fff;
-  /* Keep the location white for contrast */
-  display: block;
-  margin-top: 5px;
-  text-transform: none;
-}
-
-.text_wrapper {
-  margin-bottom: 4rem;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 74rem;
-}
-
-.bio .container {
-  max-width: 50rem;
-}
-
-.player {
-  border-radius: .5rem;
-  height: 36rem;
-  width: 100%;
-}
-
-.button {
-  background: rgba(255, 255, 255, .62);
-  border-radius: .5rem;
-  color: rgba(0, 0, 0, 1);
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 1.25rem 2rem;
-  text-decoration: none;
-  /* text-transform: uppercase; */
-}
-
-.background-1 {
-  background: #4B5A6C;
-  position: relative;
-}
-
-.background-2 {
-  /* background: linear-gradient(90deg, #050302 0%, #17100B 100%); */
-  background: #323C48;
-  position: relative;
-}
-
-.background-3 {
-  background: #63768d;
-  position: relative;
-}
-
-.background-1::before, .background-2::before, .background-3::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url("../img/noise.png"); /* A tiny transparent noise png */
-    opacity: 0.1; 
-    pointer-events: none;
-    z-index: 0;
-}
-
-.intro {
-  font-size: 1.44rem;
-  margin: 0 auto 6rem;
-  max-width: 45rem;
-  padding-top: 3rem;
-}
-
-.portrait,
-.standalone {
+/* --- Images & Figures --- */
+.portrait, .standalone, .recentCredits img, .albums img {
   border: 1px solid rgba(255, 255, 255, .25);
   max-width: 100%;
 }
+.standalone { margin: 3rem 0; }
+.recentCredits figure, .albums figure { margin: 0; }
 
-.section {
-  width: 100%;
+.recentCredits figcaption, .albums figcaption {
+  display: block;
+  font-size: .8125rem;
+  font-weight: 500;
+  margin: 2rem 0 1rem;
+  text-transform: uppercase;
+}
+.albums a:hover, .albums a:focus { transform: scale(1.1); }
+.albums a { transition: transform .3s cubic-bezier(0.87, 0, 0.13, 1); }
+
+/* ==========================================================================
+   4. LAYOUT & THEMING
+   ========================================================================== */
+
+.container { margin: 0 auto; max-width: 74rem; }
+.bio .container { max-width: 50rem; }
+.text_wrapper { margin-bottom: 4rem; }
+.player { border-radius: .5rem; height: 36rem; width: 100%; }
+
+/* --- Section Structure --- */
+.section { width: 100%; position: relative; }
+
+.sectionInner {
+  height: auto;
+  display: block;
+  /* CRITICAL FIX: Overflow must be visible so signature can hang outside */
+  /* overflow: hidden; <--- REMOVED */ 
+  padding: calc(5% + 2rem) 3rem calc(1rem);
+  text-align: center;
+  z-index: 1; 
   position: relative;
 }
 
-.header {
-  background: url(../img/nicoschuele_skewed.jpg) #141c20 no-repeat;
-  background-size: auto 66%;
-  background-position-x: 15%;
-  background-position-y: bottom;
-  padding-top: 10rem;
-  position: relative;
-  z-index: 13;
-}
+/* Skew Separation Logic */
+.sectionWrapper { margin-top: -10rem; }
 
-.music {
-  z-index: 12;
-}
-
-.cta-1 {
-  z-index: 11;
-}
-
-.cta-1 a:hover,
-.cta-1 a:focus,
-.cta-2 a:hover,
-.cta-2 a:focus,
-.cta-3 a:hover,
-.cta-3 a:focus {
-  transform: scale(1.1);
-}
-
-.cta-1 a,
-.cta-2 a,
-.cta-3 a {
-  transition: transform .3s cubic-bezier(0.87, 0, 0.13, 1);
-}
-
-.bio {
-  z-index: 10;
-}
-
-.recentCredits {
-  z-index: 9;
-}
-
-.testimonials {
-  z-index: 8;
-}
-
-.cta-2 {
-  z-index: 7;
-}
-
-.albums {
-  z-index: 6;
-}
-
-.footer {
-  z-index: 5;
-}
-
-.footer .icon {
-  height: 2rem;
-  margin-right: .75rem;
-}
-
-.link_list {
-  list-style: none;
-  margin: 0 0 4rem;
-  padding: 0;
-}
-
-.link_list_item {
-  display: inline-block;
-  margin: 0 3rem 2rem 0;
-}
-
-.link_list_item:last-child {
-  margin: 0;
-}
-
-.link_list a:hover,
-.link_list a:focus {
-  transform: scale(1.1);
-}
-
-.link_list a {
-  transition: transform .3s cubic-bezier(0.87, 0, 0.13, 1);
+.sectionWrapper > .section:not(:last-child)::after {
+  transform-origin: right bottom;
+  transform: skewY(-4deg);
 }
 
 .section::after {
@@ -521,33 +244,24 @@ blockquote {
   bottom: 0;
 }
 
-.header .sectionInner {
-  padding: calc(10% + 2rem) 3rem calc(5% + 2rem);
+/* --- Backgrounds & Noise --- */
+.background-1, .background-2, .background-3 { position: relative; }
+.background-1 { background: #4B5A6C; }
+.background-2 { background: #323C48; }
+.background-3 { background: #63768d; }
+
+/* Noise Texture Overlay */
+.background-1::before, .background-2::before, .background-3::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("../img/noise.png");
+    opacity: 0.1; 
+    pointer-events: none;
+    z-index: 0;
 }
 
-.footer .sectionInner {
-  padding: 4rem 3rem 2rem;
-}
-
-.sectionInner {
-  height: auto;
-  display: block;
-  overflow: hidden;
-  padding: calc(5% + 2rem) 3rem calc(1rem);
-  text-align: center;
-  z-index: 1;
-  position: relative;
-}
-
-.sectionWrapper {
-  margin-top: -10rem;
-}
-
-.sectionWrapper>.section:not(:last-child)::after {
-  transform-origin: right bottom;
-  transform: skewY(-4deg);
-}
-
+/* Noise Skew Fix */
 .sectionWrapper > .section:not(:last-child)::before {
     transform-origin: right bottom;
     transform: skewY(-4deg); 
@@ -555,88 +269,173 @@ blockquote {
     top: -10%;               
 }
 
-.standalone {
-  margin: 3rem 0;
+/* --- Section Specifics --- */
+.intro {
+  font-size: 1.44rem;
+  margin: 0 auto 6rem;
+  max-width: 45rem;
+  padding-top: 3rem;
 }
+
+.testimonials footer { line-height: 1.8; }
+
+.cta-1 a:hover, .cta-1 a:focus,
+.cta-2 a:hover, .cta-2 a:focus,
+.cta-3 a:hover, .cta-3 a:focus { transform: scale(1.1); }
+
+.cta-1 a, .cta-2 a, .cta-3 a {
+  transition: transform .3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+/* --- Header & Signature --- */
+.header {
+  background: url(../img/nicoschuele_skewed.jpg) #141c20 no-repeat;
+  background-size: auto 66%;
+  background-position-x: 15%;
+  background-position-y: bottom;
+  padding-top: 10rem;
+  position: relative;
+  z-index: 13;
+}
+.header .sectionInner { padding: calc(10% + 2rem) 3rem calc(5% + 2rem); }
+
+.signature {
+  bottom: 1rem;
+  height: 8.2824rem;
+  position: absolute;
+  right: calc(10% + 5rem);
+  width: 27.5rem;
+  z-index: 20;
+}
+
+.signature::before {
+  content: "";
+  background: url(../img/signature2.svg) no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.tagline {
+  position: absolute;
+  bottom: -1rem;
+  transform: translateX(2rem);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 21;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.sub-tagline {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #fff;
+  display: block;
+  margin-top: 5px;
+  text-transform: none;
+}
+
+/* --- Footer --- */
+.footer { z-index: 5; }
+.footer .sectionInner { padding: 4rem 3rem 2rem; }
+.footer .icon { height: 2rem; margin-right: .75rem; }
+
+.link_list { list-style: none; margin: 0 0 4rem; padding: 0; }
+.link_list_item { display: inline-block; margin: 0 3rem 2rem 0; }
+.link_list_item:last-child { margin: 0; }
+
+.link_list a:hover, .link_list a:focus { transform: scale(1.1); }
+.link_list a { transition: transform .3s cubic-bezier(0.87, 0, 0.13, 1); }
 
 /* ==========================================================================
-   Responsive rules
+   5. Z-INDEX STACKING (The Deck of Cards)
    ========================================================================== */
 
-@media all and (min-width: 1px) and (max-width: 999px) {
+.header       { z-index: 13; }
+.music        { z-index: 12; }
+.cta-1        { z-index: 11; }
+.bio          { z-index: 10; }
+.recentCredits{ z-index: 9; }
+.testimonials { z-index: 8; }
+.cta-2        { z-index: 7; }
+.albums       { z-index: 6; }
+.footer       { z-index: 5; }
 
-  .recentCredits .grid_container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* ==========================================================================
+   6. RESPONSIVE / MEDIA QUERIES
+   ========================================================================== */
 
-  .testimonials .grid_container,
-  .albums .grid_container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid_container2 {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media all and (min-width: 1px) and (max-width: 584px) {
-  .link_list_item {
-    display: block;
-    margin: 0 0 2rem 0;
-  }
-}
-
+/* --- Mobile (<496px) --- */
 @media all and (max-width: 496px) {
-  .signature {
-    bottom: 16rem;
-    height: 5rem;
-    right: calc(50% - 8.5rem);
-    width: 17rem;
-  }
-
-
-
   .header {
     background-size: auto 40%;
     background-position-x: center;
-    padding-top: 30rem;
+    /* Ensures header is tall enough on mobile for signature to fit */
+    min-height: 85vh; 
+    padding-top: 10rem; 
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+  }
+
+  .signature {
+    position: relative; 
+    bottom: auto;
+    right: auto;
+    margin-bottom: 2rem;
+    width: 16rem;
+    height: 6rem;
+    display: block;
+    z-index: 20;
   }
 
   .tagline {
     font-size: .85rem;
-    /* Readable mobile size */
     bottom: -4.5rem;
-    /* Pushes text BELOW the signature SVG */
     transform: none;
-    /* Removes the desktop "right shift" */
-
-    /* Center alignment fix for narrow screens */
     width: 140%;
-    /* Make container wider than the signature */
     left: -20%;
-    /* Re-center the wider container */
-
-    /* Optional: Since it's not overlapping white lines anymore, 
-       we can remove the heavy shadow for a cleaner look */
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
   }
+  
+  .sub-tagline { font-size: 0.8em; }
 
-  .sub-tagline {
-    font-size: 0.8em;
-    /* Adjust sub-text size */
-  }
-
-  .recentCredits .grid_container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
+  /* Stack grids vertically */
+  .recentCredits .grid_container,
   .testimonials .grid_container,
-  .albums .grid_container {
+  .albums .grid_container,
+  .grid_container2 {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Left-align titles for better readability on small screens */
+  .grid_container h3 {
+     align-items: flex-start; 
+     text-align: left;        
   }
 }
 
+/* --- Small to Mid (Links Stack) --- */
+@media all and (min-width: 1px) and (max-width: 584px) {
+  .link_list_item { display: block; margin: 0 0 2rem 0; }
+}
+
+/* --- Large Phones / Small Tablets (497px - 640px) --- */
 @media all and (min-width: 497px) and (max-width: 640px) {
+  .header {
+    background-size: auto 50%;
+    background-position-x: center;
+    padding-top: 28rem;
+  }
+
   .signature {
     bottom: 17rem;
     height: 7rem;
@@ -647,68 +446,38 @@ blockquote {
   .tagline {
     font-size: 1rem;
     bottom: -2rem;
-    /* Push down */
     transform: none;
-    /* Remove side shift */
     width: 120%;
-    /* Widen container */
     left: -10%;
-    /* Center container */
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
   }
 
-  .header {
-    background-size: auto 50%;
-    background-position-x: center;
-    padding-top: 20rem;
-  }
-
-  .sectionWrapper {
-    margin-top: 0;
-  }
-
-  .toggle {
-    height: 2rem;
-    right: 2.5rem;
-    top: 2.5rem;
-    width: 2rem;
-  }
-
-  .testimonials .grid_container {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  .sectionWrapper { margin-top: 0; }
+  .toggle { height: 2rem; right: 2.5rem; top: 2.5rem; width: 2rem; }
+  .testimonials .grid_container { grid-template-columns: repeat(1, 1fr); }
 }
 
+/* --- Tablets (641px - 799px) --- */
 @media all and (min-width: 641px) and (max-width: 799px) {
   .header {
     background-size: auto 50%;
     background-position-x: center;
-    padding-top: 20rem;
+    padding-top: 25rem;
   }
-
-  .signature {
-    bottom: 17rem;
-    right: calc(50% - 13.75rem);
-  }
-
+  .signature { bottom: 17rem; right: calc(50% - 13.75rem); }
+  
   .tagline {
     font-size: 1rem;
     bottom: -2rem;
-    /* Push down */
     transform: none;
-    /* Remove side shift */
     width: 120%;
-    /* Widen container */
     left: -10%;
-    /* Center container */
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
   }
-
-  .sectionWrapper {
-    margin-top: 0;
-  }
+  .sectionWrapper { margin-top: 0; }
 }
 
+/* --- Small Desktop (800px - 919px) --- */
 @media all and (min-width: 800px) and (max-width: 919px) {
   .signature {
     bottom: .5rem;
@@ -716,289 +485,86 @@ blockquote {
     right: calc(10% + 3rem);
     width: 25rem;
   }
-
   .tagline {
     font-size: 1rem;
     bottom: -2rem;
-    /* Push down */
     transform: none;
-    /* Remove side shift */
     width: 120%;
-    /* Widen container */
     left: -10%;
-    /* Center container */
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
   }
-
-  .header {
-    padding-top: 10rem;
-  }
-
-  .sectionWrapper {
-    margin-top: -10rem;
-  }
+  .header { padding-top: 10rem; }
+  .sectionWrapper { margin-top: -10rem; }
 }
 
+/* --- Desktop (Up to 999px grid fix) --- */
+@media all and (min-width: 1px) and (max-width: 999px) {
+  .recentCredits .grid_container { grid-template-columns: repeat(2, 1fr); }
+  .testimonials .grid_container,
+  .albums .grid_container { grid-template-columns: repeat(2, 1fr); }
+  .grid_container2 { grid-template-columns: 1fr; }
+}
+
+/* --- Large Desktop Variations --- */
 @media all and (min-width: 920px) and (max-width: 1199px) {
-  .signature {
-    bottom: -1rem;
-    height: 9rem;
-    right: calc(10% + 2rem);
-    width: 29rem;
-  }
-
-  .tagline {
-    font-size: 1rem;
-    bottom: -1rem;
-    /* Push down */
-    transform: none;
-    /* Remove side shift */
-    width: 120%;
-    /* Widen container */
-    left: -10%;
-    /* Center container */
-    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
-  }
-
-  .header {
-    padding-top: 10rem;
-  }
-
-  .sectionWrapper {
-    margin-top: -10rem;
-  }
+  .signature { bottom: -1rem; height: 9rem; right: calc(10% + 2rem); width: 29rem; }
+  .tagline { font-size: 1rem; bottom: -1rem; transform: none; width: 120%; left: -10%; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8); }
+  .header { padding-top: 10rem; }
+  .sectionWrapper { margin-top: -10rem; }
 }
 
 @media all and (min-width: 1200px) and (max-width: 1399px) {
-  .signature {
-    bottom: -1rem;
-    height: 12rem;
-    right: calc(10% + 5rem);
-    width: 34rem;
-  }
-
-  .header {
-    padding-top: 12rem;
-  }
-
-  .sectionWrapper {
-    margin-top: -12rem;
-  }
+  .signature { bottom: -1rem; height: 12rem; right: calc(10% + 5rem); width: 34rem; }
+  .header { padding-top: 12rem; }
+  .sectionWrapper { margin-top: -12rem; }
 }
 
 @media all and (min-width: 1400px) and (max-width: 1599px) {
-  .signature {
-    bottom: -1rem;
-    height: 12rem;
-    right: calc(10% + 7.5rem);
-    width: 34rem;
-  }
-
-  .header {
-    background-position-x: 20%;
-    padding-top: 18rem;
-  }
-
-  .sectionWrapper {
-    margin-top: -14rem;
-  }
+  .signature { bottom: -1rem; height: 12rem; right: calc(10% + 7.5rem); width: 34rem; }
+  .header { background-position-x: 20%; padding-top: 18rem; }
+  .sectionWrapper { margin-top: -14rem; }
 }
 
 @media all and (min-width: 1600px) and (max-width: 2099px) {
-  .signature {
-    height: 12rem;
-    right: calc(15% + 10rem);
-    width: 34rem;
-  }
-
-  .header {
-    background-position-x: 27.5%;
-  }
+  .signature { height: 12rem; right: calc(15% + 10rem); width: 34rem; }
+  .header { background-position-x: 27.5%; }
 }
 
 @media all and (min-width: 2100px) {
-  .signature {
-    height: 12rem;
-    right: calc(20% + 10rem);
-    width: 34rem;
-  }
-
-  .header {
-    background-position-x: 30%;
-  }
+  .signature { height: 12rem; right: calc(20% + 10rem); width: 34rem; }
+  .header { background-position-x: 30%; }
 }
 
 /* ==========================================================================
-   Helper classes
+   7. HELPERS & PRINT
    ========================================================================== */
 
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
+.hidden, [hidden] { display: none !important; }
+.invisible { visibility: hidden; }
+.clearfix::before, .clearfix::after { content: " "; display: table; }
+.clearfix::after { clear: both; }
 
 .sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+  border: 0; clip: rect(0, 0, 0, 0); height: 1px; margin: -1px; overflow: hidden;
+  padding: 0; position: absolute; white-space: nowrap; width: 1px;
 }
-
-/*
- * Extends the .sr-only class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+.sr-only.focusable:active, .sr-only.focusable:focus {
+  clip: auto; height: auto; margin: 0; overflow: visible; position: static;
+  white-space: inherit; width: auto;
 }
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: " ";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
 
 @media print {
-
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
+  *, *::before, *::after {
+    background: #fff !important; color: #000 !important;
+    box-shadow: none !important; text-shadow: none !important;
   }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  /*
-   * Printing Tables:
-   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+  a, a:visited { text-decoration: underline; }
+  a[href]::after { content: " (" attr(href) ")"; }
+  abbr[title]::after { content: " (" attr(title) ")"; }
+  a[href^="#"]::after, a[href^="javascript:"]::after { content: ""; }
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
 }
